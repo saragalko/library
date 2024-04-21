@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div>
+        <div>
+            <h1>Book Instance Detail:</h1>
+        </div>
+        <div>
+            <h2>
+                Book:
+                <a href="{{ bookinstance.book.get_absolute_url }}">{{ bookinstance.book.title }}</a>
+            </h2>
+            <h3>ISBN: {{ bookinstance.isbn }}</h3>
+            <h4>Language: {{ bookinstance.language.name }}</h4>
+            <h4>Status: {{ bookinstance.status }}</h4>
+            <!-- And more details about the book instance here -->
+        </div>
+    </div>
+{% endblock %}

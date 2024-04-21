@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Book</h1>
+    <h2>Title: {{book_instance.book.title }}</h2>
+    <h2>Author: {{ book_instance.book.author.first_name}} {{book_instance.book.author.last_name}} - {{book_instance.book.author.pseudonym }}</h2>
+    <h2>Genre: </h2>
+    {% for genre in book_instance.book.genre.all %}
+        <h2> {{ genre.name }} {% if not forloop.last %}, {% endif %}</h2>
+    {% endfor %}
+    <h2>Borrower: {{ book_instance.borrower }} </h2>
+
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Books Owned by {{ user.username }}</h1>
+{{ message }}
+  {% if book_instance %}
+    <ul>
+      {% for book in book_instance %}
+        <li>Title: {{ book.book.title }}</li>
+        <li>ISBN: {{ book.isbn }}</li>
+        <li>Due Back: {{ book.due_back }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No books owned.</p>
+  {% endif %}
+{% endblock %}
